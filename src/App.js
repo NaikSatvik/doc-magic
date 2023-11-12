@@ -35,18 +35,18 @@ function App() {
     });
     setTimeout(() => {
       setAlert(null);
-    }, 3000);
+    }, 1500);
   }
 
   return (
     <>
       <Router>
-        <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
+        <Navbar title="DocMagic" mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
         <div className="container my-3">
           <Routes>
             <Route exact path='/' element={<TextForm heading="Enter text to Analyze" mode={mode} showAlert={showAlert} />} />
-            <Route exact path='/about' element={<About />} />
+            <Route exact path='/about' element={<About mode={mode} />} />
           </Routes>
         </div>
       </Router>
